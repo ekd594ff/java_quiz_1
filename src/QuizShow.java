@@ -52,9 +52,7 @@ public class QuizShow {
 
     private void printSelects(Quiz quiz) {
         String quizString = IntStream.rangeClosed(1, quiz.getSelects().size())
-                .mapToObj(index -> {
-                    return index + ") " + quiz.getSelects().get(index - 1);
-                })
+                .mapToObj(index -> index + ") " + quiz.getSelects().get(index - 1))
                 .collect(Collectors.joining(" "));
         System.out.println(quizString);
     }
@@ -88,9 +86,7 @@ public class QuizShow {
         System.out.println("—----- 결과 —-------------");
         System.out.print("응답한 내용 : ");
         String userAnswerString = IntStream.rangeClosed(1, getUserAnswers().size())
-                .mapToObj(index -> {
-                    return index + "번 " + getUserAnswers().get(index - 1);
-                })
+                .mapToObj(index -> index + "번 " + getUserAnswers().get(index - 1))
                 .collect(Collectors.joining(", "));
         System.out.println(userAnswerString);
         System.out.println("당신 응답 합계 : " + getTotalScore());

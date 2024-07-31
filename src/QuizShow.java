@@ -91,7 +91,7 @@ public class QuizShow {
                 .mapToObj(index -> {
                     return index + "번 " + getUserAnswers().get(index - 1);
                 })
-                .collect(Collectors.joining(" "));
+                .collect(Collectors.joining(", "));
         System.out.println(userAnswerString);
         System.out.println("당신 응답 합계 : " + getTotalScore());
         System.out.println("학점은 F 입니다");
